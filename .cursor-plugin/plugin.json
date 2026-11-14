@@ -1,12 +1,13 @@
 {
   "name": "inboxmcp",
-  "version": "0.4.0",
-  "description": "Let Grok Bot or Cursor watch your inboxes: read and monitor Gmail, Outlook, QQ Mail, 163 and any IMAP mailbox over OAuth, with your saved preferences, built-in progress and optional push to a Grok Routine.",
+  "version": "0.5.0",
+  "description": "Let Grok Bot or Cursor watch and search your inboxes: Gmail, Outlook, QQ Mail, NetEase 163/126, Tencent Exmail, Aliyun and any IMAP mailbox over OAuth. Checks new mail with your saved preferences and built-in progress, searches full history, downloads attachments, and sends replies only after you confirm.",
   "author": {
     "name": "Martha trade",
     "email": "dylan@martha-trade.com"
   },
   "homepage": "https://inboxmcp.ai",
+  "repository": "https://github.com/zhlei07/inboxmcp-cursor-plugin",
   "license": "MIT",
   "keywords": [
     "email",
@@ -15,10 +16,15 @@
     "gmail",
     "outlook",
     "microsoft-365",
+    "qq-mail",
+    "netease-163",
+    "tencent-exmail",
     "email-monitoring",
+    "email-search",
     "grok-bot",
     "mcp"
   ],
   "logo": "assets/logo.svg",
+  "skills": "skills/",
   "mcpServers": "mcp.json"
 }
