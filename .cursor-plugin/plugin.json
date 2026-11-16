@@ -7,7 +7,7 @@
     "email": "dylan@martha-trade.com"
   },
   "homepage": "https://inboxmcp.ai",
-  "repository": "https://github.com/zhlei07/inboxmcp-cursor-plugin",
+  "repository": "https://github.com/inboxmcp/inboxmcp-cursor-plugin",
   "license": "MIT",
   "keywords": [
     "email",
