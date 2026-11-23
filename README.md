@@ -39,7 +39,7 @@ For push delivery, open the Bot's **Tasks → Routines**, create or reuse a webh
 
 ## Tools and permissions
 
-The server exposes seventeen tools: eleven read tools (including full-history search and attachment download), two tools that update only this connection’s processing progress, one optional legacy decision tool and three optional outgoing-draft tools that need `email:send` plus the owner’s confirmation of every draft. Source mail remains read-only. Progress is independent for each authorized connection; completing a batch does not consume another agent’s pending email or cancel its delivery.
+The server exposes nineteen tools: eleven read tools (including full-history search and attachment download), two tools that update only this connection’s processing progress, one optional legacy decision tool and five optional outgoing-mail tools that need `email:send` plus the owner’s confirmation of every email. Source mail remains read-only. Progress is independent for each authorized connection; completing a batch does not consume another agent’s pending email or cancel its delivery.
 
 | Tool | Purpose | Scope |
 | --- | --- | --- |
@@ -54,8 +54,10 @@ The server exposes seventeen tools: eleven read tools (including full-history se
 | `claim_email_batch` | Lease this connection’s pending emails with saved preferences and authentic message links. | `email:read consumer-state:write` |
 | `complete_email_batch` | Acknowledge only issued event IDs that this run completed, including silent outcomes. Unfinished events stay pending. | `email:read consumer-state:write` |
 | `report_email_decision` | Legacy option: record `notify`, `digest` or `silent` and stop remaining legacy/Grok delivery for that event. It does not alter independent progress or MCP Events queues. | `email:read decisions:write` |
-| `prepare_email_draft` | Create an immutable plain-text draft and return the owner's review link; it never sends. | `email:read email:send` |
-| `get_email_draft` | Read a draft's review status and send result. | `email:read email:send` |
+| `prepare_email_draft` | Create a draft (plain text or Markdown, optional attachments from earlier emails or small files, the mailbox's signature and reply threading) and return the owner's review link; it never sends. | `email:read email:send` |
+| `get_email_draft` | Read a draft's review status, undo time, send result, Sent copy, attachments and bounce reports. | `email:read email:send` |
+| `cancel_email_send` | Stop a confirmed email during its undo window (10 seconds by default). | `email:read email:send` |
+| `save_draft_to_mailbox` | Place an unconfirmed draft in the mailbox's own Drafts folder for the owner to send from their mail app. | `email:read email:send` |
 | `send_email` | Send a draft only after the owner approved its exact recipients and content, in InboxMCP or in a client that can show a confirmation form. | `email:read email:send` |
 | `search_emails` | Search the whole history of authorized mailboxes at the provider (every folder except Sent and Drafts) by keywords, sender and dates. | `email:read` |
 | `read_search_result` | Read the full text and attachment list of a search result, straight from the provider, without marking it read. | `email:read` |
