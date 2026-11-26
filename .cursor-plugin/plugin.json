@@ -1,7 +1,7 @@
 {
   "name": "inboxmcp",
-  "version": "0.6.0",
-  "description": "Let Grok Bot or Cursor watch and search your inboxes: Gmail, Outlook, QQ Mail, NetEase 163/126, Tencent Exmail, Aliyun and any IMAP mailbox over OAuth. Checks new mail with your saved preferences and built-in progress, searches full history, downloads attachments, and replies like your own mail app (Sent folder, undo send, signatures, attachments, formatting) only after you confirm.",
+  "version": "0.6.1",
+  "description": "Let Grok Bot or Cursor watch and search your inboxes: Gmail, Outlook, QQ Mail, NetEase 163/126, Tencent Exmail, Aliyun and any IMAP mailbox over OAuth. Checks new mail with your saved preferences and built-in progress, searches full history, downloads attachments, and replies like your own mail app (Sent folder, undo send, signatures, attachments, formatting) only after you confirm, in Cursor's own dialog or in InboxMCP. Text an email hides from people is removed and wording aimed at AI assistants is flagged, so your agent won't follow it.",
   "author": {
     "name": "Martha trade",
     "email": "dylan@martha-trade.com"

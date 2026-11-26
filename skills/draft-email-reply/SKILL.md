@@ -16,7 +16,7 @@ InboxMCP never sends on the agent's own decision. The agent prepares an exact dr
    - The mailbox's saved signature is added automatically; replies stay in the same thread.
    - Recipients, subject and text cannot change: to change them, prepare a new draft.
 3. Call `send_email` with the `draft_id`.
-   - If the client shows a confirmation form, the owner accepts or declines there.
+   - If the client shows a confirmation form, the owner answers there. Cursor IDE shows its own dialog: **Submit** sends, **Cancel** keeps the draft, and with no answer within 3 minutes the draft waits at `review_url`.
    - Otherwise the result is `awaiting_confirmation` with a `review_url`. Give the owner that link clearly and say the email has not been sent yet. After they confirm in InboxMCP, call `send_email` again.
    - A confirmed email is `scheduled` for a few seconds (the owner's undo time). If the owner wants to stop it, call `cancel_email_send` before `send_at`.
 4. Read the result:
